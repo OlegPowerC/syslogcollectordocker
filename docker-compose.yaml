@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+  syslogcollector:
+    image: ciscoliveru/syslogcollector
+    environment:
+      MONGOURL: mongodb://mongo:27017
+    depends_on:
+      - mongo
+    ports:
+      - 514:514/udp
+  syslogapi:
+    image: ciscoliveru/syslogapi
+    environment:
+      MONGOURL: mongodb://mongo:27017
+    depends_on:
+      - mongo
+    ports:
+      - 8181:80
