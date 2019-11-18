@@ -25,3 +25,14 @@ Edit Syslogapi section, if You want change WEB GUI port, different from 80
       - mongo
     ports:
       - 8181:80
+      
+      
+Important!
+Set properly timezone.
+In beta version we tested it only with Europe/Moscow timezone.
+      - TZ=Europe/Moscow
+Please tell me if Your timezone work inproperly
+
+
+PS:
+It is beta version and not have rich feature, You can find data by any field and filter it use severity (if You enter 3 - You get 3,2,1 and 0 severity)
